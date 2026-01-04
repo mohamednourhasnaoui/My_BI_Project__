@@ -1,0 +1,8 @@
+Total Revenue = SUM(Fact_Sales[total_sales])
+Total Orders = COUNT(Fact_Sales[order_id])
+Average Order Value = DIVIDE([Total Revenue], [Total Orders])
+YoY Revenue Growth =
+DIVIDE(
+    [Total Revenue] - CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(Dim_Date[full_date])),
+    CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(Dim_Date[full_date]))
+)
